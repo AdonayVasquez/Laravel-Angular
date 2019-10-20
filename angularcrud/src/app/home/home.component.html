@@ -1,0 +1,18 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Pelicula</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Año</th>
+        <th scope="col">Duracion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pelicula of peliculas">
+        <th>{{ pelicula.titulo }}</th>
+        <td>{{ pelicula.genero }}</td>
+        <td>{{ pelicula.fecha }}</td>
+        <td>{{ pelicula.duracion }}</td>
+      </tr>
+    </tbody>
+  </table>

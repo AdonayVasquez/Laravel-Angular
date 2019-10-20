@@ -1,0 +1,25 @@
+<h2>Agregar Pelicula</h2>
+<div>
+    <div class="form-group">
+      <label for="titulo">Titulo</label>
+      <input [(ngModel)]="pelicula.titulo" type="text" class="form-control" id="titulo" placeholder="Ingresar Titulo">
+    </div>
+    <div class="form-group">
+        <label for="descripcion">Descripcion</label>
+        <textarea [(ngModel)]="pelicula.descripcion" class="form-control" id="descripcion" placeholder="Descripcion"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="genero">Genero</label>
+      <input [(ngModel)]="pelicula.genero" type="text" class="form-control" id="genero" placeholder="Genero">
+    </div>
+    <div class="form-group">
+      <label for="fecha">Año</label>
+      <input [(ngModel)]="pelicula.fecha" type="text" class="form-control" id="fecha" placeholder="Año de pelicula">
+    </div>
+    <div class="form-group">
+      <label for="duracion">Duracion</label>
+      <input [(ngModel)]="pelicula.duracion" type="text" class="form-control" id="duracion" placeholder="Duracion">
+    </div>
+
+    <button (click)="guardarPelicula()" class="btn btn-primary btn-block">Guardar</button>
+  </div>
