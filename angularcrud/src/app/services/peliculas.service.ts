@@ -14,8 +14,13 @@ export class PeliculasService {
     return this.httpClient.get(this.API_ENDPOINT + '/peliculas');
   }
 
-  save(pelicula:Pelicula) {
+  save(pelicula: Pelicula) {
     const headers = new HttpHeaders( {'Content-Type' : 'application/json'});
     return this.httpClient.post(this.API_ENDPOINT + '/peliculas', pelicula, {headers: headers});
+  }
+
+  update(pelicula: Pelicula) {
+    const headers = new HttpHeaders( {'Content-Type' : 'application/json'});
+    return this.httpClient.put(this.API_ENDPOINT + '/peliculas/' + pelicula.id , pelicula, {headers: headers});
   }
 }
