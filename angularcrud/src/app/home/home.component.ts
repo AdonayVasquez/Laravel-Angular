@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculasService } from '../services/peliculas.service';
-import { HttpClient } from '@angular/common/http';
 import { Pelicula } from '../interfaces/pelicula';
 
 @Component({
@@ -10,11 +9,12 @@ import { Pelicula } from '../interfaces/pelicula';
 })
 export class HomeComponent implements OnInit {
 
-  API_ENDPOINT = 'http://127.0.0.1:8000/api';
   peliculas: Pelicula[];
-  constructor(private peliculaservice: PeliculasService, private httpClient: HttpClient) {
-    httpClient.get(this.API_ENDPOINT + '/peliculas').subscribe( (data: Pelicula[]) => {
+  constructor(private peliculaservice: PeliculasService) {
+    this.peliculaservice.get().subscribe( (data: Pelicula[]) => {
       this.peliculas = data;
+    }, (error) => {
+      console.log(error);
     });
    }
 

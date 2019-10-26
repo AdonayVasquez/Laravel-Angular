@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Pelicula } from '../interfaces/pelicula';
 import { PeliculasService } from '../services/peliculas.service';
 
+// import {ViewChild, ElementRef} from '@angular/core';
+
+// Reference firstNameInput variable inside Component
+
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -31,6 +36,12 @@ export class FormComponent implements OnInit {
       console.log(error);
       alert('Ocurrio un error');
     } );
+
+    this.pelicula.titulo = '';
+    this.pelicula.descripcion = '';
+    this.pelicula.duracion = '';
+    this.pelicula.genero = '';
+    this.pelicula.fecha = null;
   }
 
 }
