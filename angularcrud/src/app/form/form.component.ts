@@ -50,7 +50,7 @@ export class FormComponent implements OnInit {
 
     } else {
       this.peliculaService.save(this.pelicula).subscribe( (data) => {
-        alert('Pelicula guardada');
+        alert('Pelicula guardada con exito');
         console.log(data);
       }, (error) => {
         console.log(error);

@@ -23,4 +23,8 @@ export class PeliculasService {
     const headers = new HttpHeaders( {'Content-Type' : 'application/json'});
     return this.httpClient.put(this.API_ENDPOINT + '/peliculas/' + pelicula.id , pelicula, {headers: headers});
   }
+
+  delete(id) {
+    return this.httpClient.delete(this.API_ENDPOINT + '/peliculas/' + id);
+  }
 }

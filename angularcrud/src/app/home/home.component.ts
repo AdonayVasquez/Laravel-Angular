@@ -11,14 +11,34 @@ export class HomeComponent implements OnInit {
 
   peliculas: Pelicula[];
   constructor(private peliculaservice: PeliculasService) {
+
+    this.getPeliculas();
+   }
+
+  ngOnInit() {
+  }
+
+  getPeliculas() {
     this.peliculaservice.get().subscribe( (data: Pelicula[]) => {
       this.peliculas = data;
     }, (error) => {
       console.log(error);
     });
-   }
+  }
 
-  ngOnInit() {
+  delete(id) {
+
+    if (confirm('¿Seguro que quieres eliminar esta pelicula?')) {
+
+      this.peliculaservice.delete(id).subscribe((data) => {
+        alert('Eliminado con exito');
+        console.log(data);
+        this.getPeliculas();
+      }, (error) => {
+        console.log(error);
+      });
+    }
+
   }
 
 }
